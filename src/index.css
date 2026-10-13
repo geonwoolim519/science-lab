@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "IBM Plex Sans KR", "IBM Plex Sans", "Malgun Gothic", sans-serif;
+  --color-paper: #f3f0e8;
+  --color-ink: #1c1915;
+  --color-sea: #0f6e68;
+  --color-foam: #e5f3ef;
+  --color-line: #e4dfd4;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: #f3f0e8;
+  color: #1c1915;
+  text-rendering: optimizeLegibility;
+}
+
+.dark body {
+  background: #121418;
+  color: #f3f0e8;
+}
+
+::selection {
+  background: #b7e4dc;
+  color: #10211e;
+}
+
+:focus-visible {
+  outline: 2px solid #0f6e68;
+  outline-offset: 2px;
+}
+
+button,
+a,
+input,
+[role='radio'] {
+  scroll-margin-bottom: 6.5rem;
+}
+
+.katex-display {
+  margin: 0.25rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.katex {
+  font-size: 1.08em;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2.4rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 0.35rem;
+  border-radius: 999px;
+  background: #ddd8cc;
+}
+
+.dark input[type="range"]::-webkit-slider-runnable-track {
+  background: #2e3633;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: -0.52rem;
+  border-radius: 999px;
+  background: #0f6e68;
+  border: 2px solid #f6f3ea;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.25);
+}
+
+input[type="range"]::-moz-range-track {
+  height: 0.35rem;
+  border-radius: 999px;
+  background: #ddd8cc;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  background: #0f6e68;
+  border: 2px solid #f6f3ea;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
